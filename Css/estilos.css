@@ -1,0 +1,253 @@
+/*----------------Banner--------------------------------------------------*/
+#banner
+{
+    width: 100%;
+}
+/*-------------------------------------------------------------------------*/
+
+/*------------Barra Principal-------------------------------------------*/
+.principal
+{
+    background-color: rgba(240, 230, 140, 0.752);
+    padding-top: 10px; padding-bottom: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    align-items: flex-start;
+
+}
+
+#hijo2
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
+#b_atletas
+{
+    background-color: rgb(252, 224, 173);
+    border-radius: 8px;
+    border-color: orange;
+    cursor: pointer;
+    width: 50%;
+}
+
+#b_atletas:hover{
+       color: #ba6e18;
+       background-color: #ffffff;
+}
+
+#b_inicio
+{
+    background-color:  rgb(252, 224, 173);
+    border-radius: 8px;
+    border-color: orange;
+    cursor: pointer;
+}
+#b_inicio:hover{
+    color: #ba6e18;
+    background-color: #ffffff;
+}
+
+#b_buscar
+{
+    background-color:  rgb(252, 224, 173);
+    border-radius: 8px;
+    border-color:orange;
+    cursor: pointer;
+    width: 35%;
+}
+#b_buscar:hover{
+    color: #ba6e18;
+    background-color: #ffffff;
+}
+#buscador
+{
+    width: 60%; height: 25px;
+    border-radius: 7px;
+    background-color: rgba(255, 255, 255, 0.651);
+}
+
+#icono1
+{
+    padding: 6px;
+    width: 7rem;
+}
+/*-----------------------------------------------------------------------*/
+
+/*-----------Contenido--------------------------------------------------*/
+.contenidos_css{display:contents;
+}
+.atleta_css{
+    display:none;
+}
+.inicio{
+    display: none;
+}
+   
+
+
+#contenidos {
+    margin-top: 3%;
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+    
+}
+#div1
+{
+    width: 30%;
+    height: 40%;
+    flex-direction: column;
+    display: flex;
+    
+}
+/*-------------------------ATLETAS------------------------------------------*/
+/* BOTON MASCULINO*/
+#a_masculino{
+    text-decoration:none;
+    padding: 10px;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 20px;
+    color: #151515;
+    background-color:transparent;
+    border-radius: 6px;
+    border: 2px outset rgb(244, 235, 235); 
+    margin-top: 0px;
+    
+    
+}
+#a_masculino:hover{
+    color:white;
+    background-color:#1e4ad0;
+
+}
+
+
+/* BOTON FEMENINO*/
+#a_femenino{
+    text-decoration:none;
+    padding: 10px;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: 20px;
+    color: #151515;
+    background-color:transparent;
+    border-radius: 6px;
+    border: 2px outset rgb(244, 235, 235); 
+    margin-top: 0px; 
+}
+#a_femenino:hover{
+    color:white;
+    background-color:#f4891f;
+}
+
+
+ #titl{
+    justify-content: center;
+    display: flex;
+}
+.titulo{
+    background-color: transparent;
+    display: inline-block;
+    color:rgb(26, 23, 22);
+    border: outset rgb(243, 242, 238);
+    text-decoration: none;
+    transition: all .6s ease;
+    transform-style: preserve-3d;
+  
+    font-family:cursive;
+    }
+    .titulo:after {
+    content: "ELIGE EL GÉNERO DE ATLETA";
+    position: absolute;
+    top: -100%;
+    left: 0px;
+    width: 100%;
+    background: deepskyblue;
+    border: outset rgb(243, 242, 238);
+    transform-origin: left bottom;
+    transform: rotateX(90deg);
+    }
+    .titulo:hover {
+    transform-origin: center bottom;
+    transform: rotateX(-90deg) translateY(100%);
+    text-align: center;
+    }
+#atlet {
+    margin-top: 3%;
+    display: flex;
+    justify-content:space-evenly;
+    align-items:center;
+    
+}
+#Botones
+{
+    width: 20%;
+    height: 30%;
+    flex-direction: column;
+    display: flex;
+    
+}
+/*----- MUJER------*/
+  .tarjeta1{
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 200px;
+    background-color: white;
+    text-align: center;
+    background-color:rgb(248, 148, 181) ;
+    margin-bottom: 15px;
+    margin-right: 15px;
+  } 
+.nombre_F{
+    color: #eee3e3;
+    font-size: 18px;
+    background-color: rgb(187, 26, 209);
+    font-family:cursive;
+    
+}
+
+.tarjeta2{
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 200px;
+    background-color: white;
+    text-align: center;
+    background-color:rgb(148, 246, 248) ;
+    margin-bottom: 15px;
+    margin-right: 15px;
+  } 
+.nombre_M{
+    color: #eee3e3;
+    font-size: 18px;
+    background-color: rgb(43, 40, 199);
+    font-family:cursive;
+    
+} 
+
+.foto{
+    width: 70%;
+    margin-top: 21px;
+    
+}
+
+#informacion1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+}
+#informacion2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#informacion{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

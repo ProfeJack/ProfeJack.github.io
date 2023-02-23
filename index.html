@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="Css/estilos.css">
+   
+    <style>
+        body
+        {
+            background-image: url(Imagenes/rio.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+
+</head>
+<body> 
+    
+<!---------------------------Banner------------------------------------------>
+    <div class="banner">
+        <img src="Imagenes/banner.png" id="banner">
+        <audio src=""></audio>
+    </div>
+<!----------------------------------------------------------------------------->
+<!-------------------------Barra principal------------------------------------------->
+    <div class="principal">
+      
+        <div id="hijo1">
+            <p>Conoce a tus atletas favoritos:</p>
+            <button onclick="ATLETAS()" id="b_atletas">ATLETAS</button>
+        </div>
+
+        <div id="hijo2">
+            <img src="Imagenes/Diminutivo2.png" id="icono1">
+            <button onclick="INICIO()" id="b_inicio">INICIO</button>
+        </div>
+
+        <div id="hijo3">
+            <p>Que deporte estas buscando:</p>
+            <input type="text" name="" id="buscador" placeholder="  Buscar..."> 
+            <button id="b_buscar">BUSCAR</button>      
+        </div>
+
+    </div>
+<!---------------------------------------------------------------------------->
+<!----------------------------Contenido--------------------------------------->
+    <div id="contenidos"  class="contenidos_css">
+        
+      
+        <div id="div1">
+            <img src="Imagenes/mascotas2.png" id="img_mascota">
+            <p>Las mascotas oficiales de las Olimpiadas de Río 2016 
+                son Vinicius y Tom, en homenaje a los ídolos de la 
+                música brasileña Vinicius de Moraes y Tom Jobim.</p>
+        </div>
+        
+
+        <div id="div1">
+            <img src="Imagenes/Estadio.jpg" id="img_estadio">
+            <p>La ceremonia de apertura de los Juegos Olímpicos de 
+                Río de Janeiro 2016 se realizó el viernes 5 de agosto 
+                en el Estadio Maracaná de Río de Janeiro.</p>
+        </div>
+
+       
+        <div id="div1">
+            <img src="Imagenes/Cerimonia.jpg" id="img_ceremonia">
+            <p>La ceremonia de clausura se llevó a cabo el 21 de 
+                agosto en el Estadio Maracaná.</p>
+        </div>
+        
+
+    </div>
+<!-----------------------------PANTALLA ATLETAS----------------------------------------------->
+    <div id="atletas_js" class="atleta_css">
+        <div id="titl">
+         <h1 class="titulo">ELIGE EL GÉNERO DE ATLETA</h1>
+        </div>
+       
+
+        <div id="atlet">
+           <div id="Botones">
+              <button  id="a_masculino">ATLETAS MASCULINOS</button>
+              <img id="imagen" src="https://img.freepik.com/vector-premium/diseno-avatar-persona_24877-38131.jpg?w=2000"> 
+           </div>  
+
+           <div id="Botones"> 
+              <button  id="a_femenino">ATLETAS FEMENINOS</button>
+              <img id="imagen" class="mujer" src="https://img.freepik.com/vector-premium/diseno-avatar-persona_24877-38130.jpg?w=2000">
+           </div>
+        </div>
+    </div>
+<div id="informacion"></div>
+<div id="informacion1"></div>
+
+<div id="informacion2"></div>
+
+<div id="inicio_js" class="inicio_css">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-------------------------------SCRIPT-------------------------------------------->
+    <script src="JS/olim-rio.js"></script>
+
+    <script>
+
+    function ATLETAS()
+    {
+        document.getElementById("contenidos").style.display = "none"
+        document.getElementById("atletas_js").style.display = "contents"
+    }
+    function INICIO()
+    {
+        $("#atletas_js").hide()
+        $("#inicio_js").hide()
+        $("#contenidos").show()
+        $("#informacion1").empty()
+        $("#informacion2").empty()
+        $("#informacion").empty()
+        
+    }
+    
+    
+
+       
+    //console.log(base_olimrio.athletes[0].name)
+    var nombre_femenino=[]
+    var deporteF=[]
+    var paisF=[]
+    var edadF=[]
+
+
+    for (var i=0; i<base_olimrio.athletes.length ; i++)
+    {
+        if (base_olimrio.athletes[i].gender=="F")
+        {
+            nombre_femenino.push(base_olimrio.athletes[i].name)
+            deporteF.push(base_olimrio.athletes[i].sport)
+            paisF.push(base_olimrio.athletes[i].team)
+            edadF.push(base_olimrio.athletes[i].age)
+        }
+    }
+
+    var nombre_masculino=[]
+    var deporteM=[]
+    var paisM=[]
+    var edadM=[]
+
+
+    for (var i=0; i<base_olimrio.athletes.length ; i++)
+    {
+        if (base_olimrio.athletes[i].gender=="M")
+        {
+            nombre_masculino.push(base_olimrio.athletes[i].name)
+            deporteM.push(base_olimrio.athletes[i].sport)
+            paisM.push(base_olimrio.athletes[i].team)
+            edadM.push(base_olimrio.athletes[i].age)
+        }
+    }
+    
+    $(document).ready(function () {
+
+        $("#a_femenino").click(function (e) {
+        e.preventDefault()
+        //para evitar repeticion
+        $("#informacion2").empty()
+        $("#informacion1").empty()
+        
+
+        
+        for(var i=0; i<edadF.length ; i++){
+            let div = $("<div></div>");
+        div.addClass("tarjeta1");
+        let nombre = $("<h3></h3>");
+        let img = $("<img></img>");
+        img.attr("src", "https://img.freepik.com/vector-premium/diseno-avatar-persona_24877-38130.jpg?w=2000");
+        img.addClass("foto");
+        div.append(img);
+
+        nombre.addClass("nombre_F");
+        nombre.append(nombre_femenino[i]);
+        div.append(nombre);
+
+        let deporte = $("<h3></h3>");
+        deporte.addClass("Deporte");
+        deporte.append("Deporte: "+ deporteF[i]);
+        div.append(deporte);
+
+        let pais = $("<h3></h3>");
+        pais.addClass("Pais");
+        pais.append("País: "+ paisF[i]);
+        div.append(pais);
+
+        let edad = $("<h3></h3>");
+        edad.addClass("Edad");
+        edad.append("Edad: "+ edadF[i]+ " años");
+        div.append(edad);
+        
+        $('#informacion1').append(div); 
+
+        }
+        
+    })
+    })
+  
+    $(document).ready(function () {
+        $("#a_masculino").click(function (e) {
+        e.preventDefault()
+        $("#informacion2").empty()
+        $("#informacion1").empty()
+
+        for(var i=0; i<edadM.length ; i++){
+        let div = $("<div></div>");
+        div.addClass("tarjeta2");
+        let nombre = $("<h3></h3>");
+        let img = $("<img></img>");
+        img.attr("src", "https://img.freepik.com/vector-premium/diseno-avatar-persona_24877-38131.jpg?w=2000" );
+        img.addClass("foto");
+        div.append(img);
+
+        nombre.addClass("nombre_M");
+        nombre.append(nombre_masculino[i]);
+        div.append(nombre);
+
+        let deporte = $("<h3></h3>");
+        deporte.addClass("Deporte");
+        deporte.append("Deporte: "+ deporteM[i]);
+        div.append(deporte);
+
+        let pais = $("<h3></h3>");
+        pais.addClass("Pais");
+        pais.append("País: "+ paisM[i]);
+        div.append(pais);
+
+        let edad = $("<h3></h3>");
+        edad.addClass("Edad");
+        edad.append("Edad: "+ edadM[i]+ " años");
+        div.append(edad);
+
+
+        $('#informacion2').append(div);}
+    
+    })
+    })
+    //segunda HU
+
+    var nombres=[]
+    var paises=[]
+    var edades=[]
+    var medallas=[]
+    var generos = []
+
+    
+
+    $(document).ready(function () {
+        $("#b_buscar").click(function (e) {
+        e.preventDefault()
+        
+         
+         var deporte_encontrado = false
+         var deporte=$("#buscador").val()
+         
+
+         for (var i=0; i<base_olimrio.athletes.length ; i++)
+        {
+        if (base_olimrio.athletes[i].sport ==  deporte)
+         {
+            deporte_encontrado = true
+
+            nombres.push(base_olimrio.athletes[i].name)
+            paises.push(base_olimrio.athletes[i].team)
+            edades.push(base_olimrio.athletes[i].age)
+            medallas.push(base_olimrio.athletes[i].medal)
+            generos.push(base_olimrio.athletes[i].gender)
+         }
+        }
+
+        if(deporte_encontrado == true)
+        {
+            $("#contenidos").hide()
+            $("#informacion").empty()
+            //ocultar los botones de femeninas y masculinos
+            for(var i=0; i<edades.length ; i++){
+            let div = $("<div></div>");
+            if(generos[i] == "F")
+            {
+                div.addClass("tarjeta1");
+            }
+            else
+            {
+                div.addClass("tarjeta2");   
+            }
+            
+            let nombre = $("<h3></h3>");
+            let img = $("<img></img>");
+
+            //El siguiente comando debe estar dentro de una estructura
+            //if else que valide el genero del atleta para elegir la foto
+            img.attr("src", "https://img.freepik.com/vector-premium/diseno-avatar-persona_24877-38131.jpg?w=2000" );
+            
+            
+            
+            img.addClass("foto");
+            div.append(img);
+
+            nombre.addClass("Nombres");
+            nombre.append(nombres[i]);
+            div.append(nombre);
+
+            let medalla = $("<h3></h3>");
+            medalla.addClass("Medallas");
+            medalla.append("Medalla: "+ medallas[i]);
+            div.append(medalla);
+
+            let Pais = $("<h3></h3>");
+            Pais.addClass("Paises");
+            Pais.append("País: "+ paises[i]);
+            div.append(Pais);
+
+            let Edad = $("<h3></h3>");
+            Edad.addClass("Edades");
+            Edad.append("Edad: "+ edades[i]+ " años");
+            div.append(Edad);
+
+            $('#informacion').append(div);
+            
+            }
+            nombres = []
+            edades = []
+            medallas = []
+            paises = []
+        }
+        })
+
+
+    })
+
+
+    </script>
+
+
+
+
+
+
+</body>
+</html>
